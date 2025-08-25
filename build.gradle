@@ -24,6 +24,12 @@ repositories {
 		}
 	}
 
+	// Runtime mod deps
+	maven {
+		url = "https://api.modrinth.com/maven"
+		content { includeGroup "maven.modrinth" }
+	}
+
 	// Mod Menu
 	maven { url = "https://api.modrinth.com/maven" }
 	// YACL
@@ -56,6 +62,7 @@ dependencies {
 
 	// for modRuntime
 	modRuntimeOnly "me.djtheredstoner:DevAuth-fabric:1.2.1"
+	modLocalRuntime "maven.modrinth:sodium:mc1.21.6-0.6.13-fabric"
 
 	// --- Config shit ---
 	// Mod Menu
