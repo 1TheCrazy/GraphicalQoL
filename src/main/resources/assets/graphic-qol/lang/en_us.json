@@ -1,0 +1,29 @@
+{
+  "gui.graphical-qol.config.category.world" : "World",
+  "gui.graphical-qol.config.title.fog" : "Fog",
+  "gui.graphical-qol.config.title.light" : "Lighting",
+
+  "gui.graphical-qol.config.category.player" : "Player",
+  "gui.graphical-qol.config.title.effects" : "Effects",
+
+  "gui.graphical-qol.config.disable_nether_fog" : "Disable Nether Fog",
+  "gui.graphical-qol.config.description.disable_nether_fog" : "Disables/Enables Nether Fog",
+
+  "gui.graphical-qol.config.disable_overworld_fog" : "Disable Overworld Fog",
+  "gui.graphical-qol.config.description.disable_overworld_fog" : "Disables/Enables Overworld Fog",
+
+  "gui.graphical-qol.config.disable_end_fog" : "Disable End Fog",
+  "gui.graphical-qol.config.description.disable_end_fog" : "Disables/Enables End Fog",
+
+  "gui.graphical-qol.config.disable_underwater_fog" : "Disable Underwater Fog",
+  "gui.graphical-qol.config.description.disable_underwater_fog" : "Disables/Enables Underwater Fog",
+
+  "gui.graphical-qol.config.gamma_correction" : "Gamma Correction",
+  "gui.graphical-qol.config.description.gamma_correction" : "Corrects the default Gamma value with a given percentage",
+
+  "gui.graphical-qol.config.disable_blindness" : "Disabled Blindness Effect",
+  "gui.graphical-qol.config.description.disable_blindness" : "Disable the darkening caused by the Blindness effect",
+
+  "gui.graphical-qol.config.disable_darkness" : "Disabled Darkness Effect",
+  "gui.graphical-qol.config.description.disable_darkness" : "Disable the darkening caused by the Darkness effect"
+}

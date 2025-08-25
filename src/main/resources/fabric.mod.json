@@ -19,10 +19,12 @@
 		],
 		"client": [
 			"me.onethecrazy.graphicqol.GraphicQoLClient"
+		],
+		"modmenu": [
+			"me.onethecrazy.graphicqol.ModMenuIntegration"
 		]
 	},
 	"mixins": [
-		"graphic-qol.mixins.json",
 		{
 			"config": "graphic-qol.client.mixins.json",
 			"environment": "client"
