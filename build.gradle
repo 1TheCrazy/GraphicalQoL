@@ -23,6 +23,14 @@ repositories {
 			includeGroup("me.djtheredstoner")
 		}
 	}
+
+	// Mod Menu
+	maven { url = "https://api.modrinth.com/maven" }
+	// YACL
+	maven {
+		name 'Xander Maven'
+		url 'https://maven.isxander.dev/releases'
+	}
 }
 
 loom {
@@ -48,6 +56,12 @@ dependencies {
 
 	// for modRuntime
 	modRuntimeOnly "me.djtheredstoner:DevAuth-fabric:1.2.1"
+
+	// --- Config shit ---
+	// Mod Menu
+	modApi "maven.modrinth:modmenu:15.0.0-beta.3"
+	// YACL
+	modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
 }
 
 processResources {
