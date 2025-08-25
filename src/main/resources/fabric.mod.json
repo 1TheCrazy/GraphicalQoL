@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "graphic-qol",
+	"version": "${version}",
+	"name": "GraphicQoL",
+	"description": "Various graphical Quality of Life settings",
+	"authors": [
+		"1TheCrazy"
+	],
+	"contact": {
+		"sources": "https://github.com/1TheCrazy/GraphicalQoL"
+	},
+	"license": "MIT",
+	"icon": "assets/graphic-qol/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"me.onethecrazy.graphicqol.GraphicQoL"
+		],
+		"client": [
+			"me.onethecrazy.graphicqol.GraphicQoLClient"
+		]
+	},
+	"mixins": [
+		"graphic-qol.mixins.json",
+		{
+			"config": "graphic-qol.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
