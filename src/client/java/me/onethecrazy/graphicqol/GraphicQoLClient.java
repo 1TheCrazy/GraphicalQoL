@@ -5,7 +5,7 @@ import me.onethecrazy.graphicqol.util.FileUtil;
 import net.fabricmc.api.ClientModInitializer;
 
 public class GraphicQoLClient implements ClientModInitializer {
-	public static Config ClientConfig;
+	public static Config clientConfig;
 
 	@Override
 	public void onInitializeClient() {
@@ -13,6 +13,10 @@ public class GraphicQoLClient implements ClientModInitializer {
 		FileUtil.createPaths();
 
 		// Load Config
-		ClientConfig = FileUtil.loadConfig();
+		clientConfig = FileUtil.loadConfig();
+	}
+
+	public static void saveConfig(){
+		FileUtil.writeConfig(clientConfig);
 	}
 }

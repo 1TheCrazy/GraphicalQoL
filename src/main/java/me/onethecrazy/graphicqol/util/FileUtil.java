@@ -75,10 +75,14 @@ public class FileUtil {
         return Files.exists(filePath);
     }
 
-    public static void writeConfig(Config save) throws IOException {
+    public static void writeConfig(Config save) {
         Gson gson = new Gson();
         String json = gson.toJson(save);
 
-        writeFile(getConfigPath(), json);
+        try {
+            writeFile(getConfigPath(), json);
+        } catch (IOException e) {
+            GraphicQoL.LOGGER.error("I/O error while writing config: {0}", e);
+        }
     }
 }

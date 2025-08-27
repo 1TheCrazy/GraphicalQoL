@@ -9,6 +9,7 @@ import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
 import me.onethecrazy.graphicqol.objects.config.EffectConfig;
 import me.onethecrazy.graphicqol.objects.config.FogConfig;
 import me.onethecrazy.graphicqol.objects.config.LightConfig;
+import me.onethecrazy.graphicqol.util.FileUtil;
 import net.minecraft.text.Text;
 
 public class ModMenuIntegration implements ModMenuApi {
@@ -28,8 +29,8 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_nether_fog")))
                                                         .binding(
                                                                 FogConfig.DEFAULT_NETHER_FOG,
-                                                            () -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableNetherFog, // getter
-                                                            v  -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableNetherFog = v // setter
+                                                            () -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableNetherFog, // getter
+                                                            v  -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableNetherFog = v // setter
                                                         )
                                                         .controller(TickBoxControllerBuilder::create)
                                                         .build()
@@ -40,8 +41,8 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_overworld_fog")))
                                                         .binding(
                                                                 FogConfig.DEFAULT_OVERWORLD_FOG,
-                                                                () -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableOverworldFog, // getter
-                                                                v  -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableOverworldFog = v // setter
+                                                                () -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableOverworldFog, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableOverworldFog = v // setter
                                                         )
                                                         .controller(TickBoxControllerBuilder::create)
                                                         .build()
@@ -52,8 +53,8 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_end_fog")))
                                                         .binding(
                                                                 FogConfig.DEFAULT_OVERWORLD_FOG,
-                                                                () -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableEndFog, // getter
-                                                                v  -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableEndFog = v // setter
+                                                                () -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableEndFog, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableEndFog = v // setter
                                                         )
                                                         .controller(TickBoxControllerBuilder::create)
                                                         .build()
@@ -64,8 +65,32 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_underwater_fog")))
                                                         .binding(
                                                                 FogConfig.DEFAULT_UNDERWATER_FOG,
-                                                                () -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableUnderwaterFog, // getter
-                                                                v  -> GraphicQoLClient.ClientConfig.worldConfig.fogConfig.disableUnderwaterFog = v // setter
+                                                                () -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableUnderwaterFog, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableUnderwaterFog = v // setter
+                                                        )
+                                                        .controller(TickBoxControllerBuilder::create)
+                                                        .build()
+                                        )
+                                        .option(
+                                                Option.<Boolean>createBuilder()
+                                                        .name(Text.translatable("gui.graphical-qol.config.disable_lava_fog"))
+                                                        .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_lava_fog")))
+                                                        .binding(
+                                                                FogConfig.DEFAULT_LAVA_FOG,
+                                                                () -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableLavaFog, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disableLavaFog = v // setter
+                                                        )
+                                                        .controller(TickBoxControllerBuilder::create)
+                                                        .build()
+                                        )
+                                        .option(
+                                                Option.<Boolean>createBuilder()
+                                                        .name(Text.translatable("gui.graphical-qol.config.disable_powder_snow_fog"))
+                                                        .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_powder_snow_fog")))
+                                                        .binding(
+                                                                FogConfig.DEFAULT_POWDER_SNOW_FOG,
+                                                                () -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disablePowderSnowFog, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.worldConfig.fogConfig.disablePowderSnowFog = v // setter
                                                         )
                                                         .controller(TickBoxControllerBuilder::create)
                                                         .build()
@@ -81,8 +106,8 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.gamma_correction")))
                                                         .binding(
                                                                 LightConfig.DEFAULT_GAMMA_CORRECTION,
-                                                                () -> GraphicQoLClient.ClientConfig.worldConfig.lightConfig.gammaCorrection, // getter
-                                                                v  -> GraphicQoLClient.ClientConfig.worldConfig.lightConfig.gammaCorrection = v // setter
+                                                                () -> GraphicQoLClient.clientConfig.worldConfig.lightConfig.gammaCorrection, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.worldConfig.lightConfig.gammaCorrection = v // setter
                                                         )
                                                         .controller(opt -> IntegerSliderControllerBuilder.create(opt)
                                                                 .range(-750, 1500)
@@ -107,8 +132,8 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_blindness")))
                                                         .binding(
                                                                 EffectConfig.DEFAULT_DISABLE_BLINDESS,
-                                                                () -> GraphicQoLClient.ClientConfig.playerConfig.effectConfig.disableBlindness, // getter
-                                                                v  -> GraphicQoLClient.ClientConfig.playerConfig.effectConfig.disableBlindness = v // setter
+                                                                () -> GraphicQoLClient.clientConfig.playerConfig.effectConfig.disableBlindness, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.playerConfig.effectConfig.disableBlindness = v // setter
                                                         )
                                                         .controller(TickBoxControllerBuilder::create)
                                                         .build()
@@ -119,8 +144,8 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.disable_darkness")))
                                                         .binding(
                                                                 EffectConfig.DEFAULT_DISABLE_DARKNESS,
-                                                                () -> GraphicQoLClient.ClientConfig.playerConfig.effectConfig.disableDarkness, // getter
-                                                                v  -> GraphicQoLClient.ClientConfig.playerConfig.effectConfig.disableDarkness = v // setter
+                                                                () -> GraphicQoLClient.clientConfig.playerConfig.effectConfig.disableDarkness, // getter
+                                                                v  -> GraphicQoLClient.clientConfig.playerConfig.effectConfig.disableDarkness = v // setter
                                                         )
                                                         .controller(TickBoxControllerBuilder::create)
                                                         .build()
@@ -129,6 +154,7 @@ public class ModMenuIntegration implements ModMenuApi {
                         )
                         .build()
                 )
+                .save(GraphicQoLClient::saveConfig)
                 .build()
                 .generateScreen(parent);
     }
