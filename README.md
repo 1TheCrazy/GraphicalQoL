@@ -22,7 +22,7 @@ Various graphical Quality of Life settings for Minecraft Fabric
 ![Menu 2](https://github.com/1TheCrazy/GraphicalQoL/blob/master/screenshots/settings_menu_2.png)
 
 ## Installing
-Download it from [GitHub Releases](https://github.com/1TheCrazy/GraphicalQoL/releases), [Modrinth](https://modrinth.com/mod/graphic-qol) or [CurseForge](https://curseforge.com/minecraft/mc-mods/graphic-qol)
+Download it from [GitHub Releases](https://github.com/1TheCrazy/GraphicalQoL/releases), [Modrinth](https://modrinth.com/mod/graphic-qol) or [CurseForge](https://curseforge.com/minecraft/mc-mods/graphicqol)
 
 Then place it inside your `mods` folder for Minecraft.
 
