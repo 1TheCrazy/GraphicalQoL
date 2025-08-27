@@ -29,7 +29,6 @@ public class LightmapTextureManagerMixin {
     }
 
     // --- Gamma Adjustments ---
-
     @Redirect(
             method = "update(F)V",
             at = @At(value = "INVOKE", target = "Ljava/lang/Math;max(FF)F")
@@ -42,31 +41,4 @@ public class LightmapTextureManagerMixin {
         return base * mult;
     }
 
-    /*
-    // Redirect night vision check to here
-    @Redirect(
-            method = "update",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/network/ClientPlayerEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"
-            )
-    )
-    private boolean onHasNightVisionCheck(ClientPlayerEntity instance, RegistryEntry effect) {
-        if (effect == StatusEffects.NIGHT_VISION)
-            return true;
-
-        return MinecraftClient.getInstance().player.hasStatusEffect(effect);
-    }
-
-    // Redirect Night vision strength check to here;
-    @Redirect(
-            method = "update(F)V",
-            at = @At(
-                    value = "INVOKE",
-                    target = "Lnet/minecraft/client/render/GameRenderer;getNightVisionStrength(Lnet/minecraft/entity/LivingEntity;F)F"
-            )
-    )
-    private float onGetNightVisionStrength(LivingEntity entity, float tickDelta) {
-        return GraphicQoLClient.clientConfig.worldConfig.lightConfig.gammaCorrection / 100f - 1;
-    }*/
 }

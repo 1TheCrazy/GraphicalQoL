@@ -101,6 +101,10 @@ jar {
 	}
 }
 
+remapJar{
+	archiveFileName.set("${project.archives_base_name}-v${project.mod_version}+mc${project.minecraft_version}.jar")
+}
+
 // configure the maven publication
 publishing {
 	publications {
