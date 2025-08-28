@@ -21,11 +21,25 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(LightmapTextureManager.class)
 public class LightmapTextureManagerMixin {
 
-    // Disables change in light when you receive the darkness effect
+    // Disables static change in light when you receive the darkness effect
     @Inject(method = "getDarkness", at=@At("RETURN"), cancellable = true)
     void onGetDarkness(LivingEntity entity, float factor, float tickProgress, CallbackInfoReturnable<Float> cir){
         if(GraphicQoLClient.clientConfig.playerConfig.effectConfig.disableDarkness)
             cir.setReturnValue(0f);
+    }
+
+    //Disables animated change in light when you receive the darkness effect
+    @Redirect(
+            method = "update",
+            at = @At(
+                    value = "INVOKE",
+                    target = "Lnet/minecraft/client/network/ClientPlayerEntity;getEffectFadeFactor(Lnet/minecraft/registry/entry/RegistryEntry;F)F")
+    )
+    private float onGetFadeFactor(ClientPlayerEntity instance, RegistryEntry registryEntry, float v){
+        if(GraphicQoLClient.clientConfig.playerConfig.effectConfig.disableDarkness)
+            return 0f;
+
+        return instance.getEffectFadeFactor(registryEntry, v);
     }
 
     // --- Gamma Adjustments ---
