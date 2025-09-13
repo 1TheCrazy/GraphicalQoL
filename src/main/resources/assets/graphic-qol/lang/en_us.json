@@ -2,6 +2,7 @@
   "gui.graphical-qol.config.category.world" : "World",
   "gui.graphical-qol.config.title.fog" : "Fog",
   "gui.graphical-qol.config.title.light" : "Lighting",
+  "gui.graphical-qol.config.title.weather" : "Weather",
 
   "gui.graphical-qol.config.category.player" : "Player",
   "gui.graphical-qol.config.title.effects" : "Effects",
@@ -45,5 +46,8 @@
   "gui.graphical-qol.config.description.no_pumpkin_blur" : "Disables/Enables the Blur Mask when you war a Pumpkin",
 
   "gui.graphical-qol.config.low_fire_shift" : "Low Fire Shift",
-  "gui.graphical-qol.config.description.low_fire_shift" : "Shifts the Fire Overlay up/down when burning by the given amount"
+  "gui.graphical-qol.config.description.low_fire_shift" : "Shifts the Fire Overlay up/down when burning by the given amount",
+
+  "gui.graphical-qol.config.weather_particle_opacity" : "Weather Particle Opacity",
+  "gui.graphical-qol.config.description.weather_particle_opacity" : "Adjust the opacity for Weather Particles like Snow and Rain"
 }

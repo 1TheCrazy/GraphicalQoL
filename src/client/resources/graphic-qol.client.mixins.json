@@ -8,6 +8,7 @@
     "InGameHudMixin",
     "InGameOverlayRendererMixin",
     "LightmapTextureManagerMixin",
+    "WeatherRenderingMixin",
     "particles.ParticleManagerMixin",
     "particles.WorldRendererMixin"
   ],

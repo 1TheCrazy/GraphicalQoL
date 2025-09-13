@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.Random;
@@ -18,6 +19,9 @@ public abstract class WorldRendererMixin {
 
     @Unique private static final Random random = new Random();
 
+    // ---
+    // For Particle Multiplier
+    // ---
     @Redirect(method = "addParticle(Lnet/minecraft/particle/ParticleEffect;ZZDDDDDD)V",
         at=@At(
                 value = "INVOKE",

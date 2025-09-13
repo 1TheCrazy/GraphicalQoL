@@ -115,6 +115,27 @@ public class ConfigScreen {
                                                 )
                                                 .build()
                                 )
+                                .group(
+                                        OptionGroup.createBuilder()
+                                                .name(Text.translatable("gui.graphical-qol.config.title.weather"))
+                                                .option(
+                                                        Option.<Integer>createBuilder()
+                                                                .name(Text.translatable("gui.graphical-qol.config.weather_particle_opacity"))
+                                                                .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.weather_particle_opacity")))
+                                                                .binding(
+                                                                        WeatherConfig.DEFAULT_WEATHER_OPACITY,
+                                                                        () -> GraphicQoLClient.clientConfig.worldConfig.weatherConfig.weatherOpacity, // getter
+                                                                        v  -> GraphicQoLClient.clientConfig.worldConfig.weatherConfig.weatherOpacity = v // setter
+                                                                )
+                                                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                                                                        .range(0, 10)
+                                                                        .step(1)
+                                                                        .formatValue(v -> Text.of(String.format("%.1f", v / 10.0)))
+                                                                )
+                                                                .build()
+                                                )
+                                                .build()
+                                )
                                 .build()
                 )
                 .category(
