@@ -1,13 +1,15 @@
 {
-	"required": true,
-	"package": "me.onethecrazy.graphicqol.mixin.client",
-	"compatibilityLevel": "JAVA_21",
-	"client": [
-		"FogRendererMixin",
-		"GameRendererMixin",
-		"LightmapTextureManagerMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
+  "required": true,
+  "package": "me.onethecrazy.graphicqol.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "FogRendererMixin",
+    "GameRendererMixin",
+    "LightmapTextureManagerMixin",
+    "particles.ParticleManagerMixin",
+    "particles.WorldRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
 	}
 }

@@ -6,6 +6,7 @@ import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
 import me.onethecrazy.graphicqol.objects.config.EffectConfig;
 import me.onethecrazy.graphicqol.objects.config.FogConfig;
 import me.onethecrazy.graphicqol.objects.config.LightConfig;
+import me.onethecrazy.graphicqol.objects.config.ParticleConfig;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 
@@ -145,6 +146,27 @@ public class ConfigScreen {
                                                                         v  -> GraphicQoLClient.clientConfig.playerConfig.effectConfig.disableDarkness = v // setter
                                                                 )
                                                                 .controller(TickBoxControllerBuilder::create)
+                                                                .build()
+                                                )
+                                                .build()
+                                )
+                                .group(
+                                        OptionGroup.createBuilder()
+                                                .name(Text.translatable("gui.graphical-qol.config.title.particles"))
+                                                .option(
+                                                        Option.<Integer>createBuilder()
+                                                                .name(Text.translatable("gui.graphical-qol.config.particle_multiplier"))
+                                                                .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.particle_multiplier")))
+                                                                .binding(
+                                                                        ParticleConfig.DEFAULT_PARTICLE_AMOUNT,
+                                                                        () -> GraphicQoLClient.clientConfig.playerConfig.particleConfig.particleAmount, // getter
+                                                                        v  -> GraphicQoLClient.clientConfig.playerConfig.particleConfig.particleAmount = v // setter
+                                                                )
+                                                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                                                                        .range(0, 100)
+                                                                        .step(1)
+                                                                        .formatValue(v -> Text.literal("×" + v ))
+                                                                )
                                                                 .build()
                                                 )
                                                 .build()
