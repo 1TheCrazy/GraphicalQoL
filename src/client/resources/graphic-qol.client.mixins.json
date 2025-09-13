@@ -5,6 +5,8 @@
   "client": [
     "FogRendererMixin",
     "GameRendererMixin",
+    "InGameHudMixin",
+    "InGameOverlayRendererMixin",
     "LightmapTextureManagerMixin",
     "particles.ParticleManagerMixin",
     "particles.WorldRendererMixin"

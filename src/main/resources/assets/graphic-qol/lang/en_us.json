@@ -6,6 +6,7 @@
   "gui.graphical-qol.config.category.player" : "Player",
   "gui.graphical-qol.config.title.effects" : "Effects",
   "gui.graphical-qol.config.title.particles" : "Particles",
+  "gui.graphical-qol.config.title.player_general" : "General",
 
   "gui.graphical-qol.config.disable_nether_fog" : "Disable Nether Fog",
   "gui.graphical-qol.config.description.disable_nether_fog" : "Disables/Enables Nether Fog",
@@ -35,5 +36,14 @@
   "gui.graphical-qol.config.description.disable_darkness" : "Disable the darkening caused by the Darkness effect.\nThis may be bannable on Servers",
 
   "gui.graphical-qol.config.particle_multiplier" : "Particle Multiplier",
-  "gui.graphical-qol.config.description.particle_multiplier" : "Multiplies the amount of particles summoned by the given amount.\nThis heavily affects performance if set too high!"
+  "gui.graphical-qol.config.description.particle_multiplier" : "Multiplies the amount of particles summoned by the given amount.\nThis heavily affects performance if set too high!",
+
+  "gui.graphical-qol.config.no_head_tilt" : "Disable Damage Head Tilt",
+  "gui.graphical-qol.config.description.no_head_tilt" : "Disables/Enables the Head Tilt when  you receive damage",
+
+  "gui.graphical-qol.config.no_pumpkin_blur" : "Disable Pumpkin Blur",
+  "gui.graphical-qol.config.description.no_pumpkin_blur" : "Disables/Enables the Blur Mask when you war a Pumpkin",
+
+  "gui.graphical-qol.config.low_fire_shift" : "Low Fire Shift",
+  "gui.graphical-qol.config.description.low_fire_shift" : "Shifts the Fire Overlay up/down when burning by the given amount"
 }

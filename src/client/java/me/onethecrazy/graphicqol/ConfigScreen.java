@@ -1,15 +1,14 @@
 package me.onethecrazy.graphicqol;
 
 import dev.isxander.yacl3.api.*;
+import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
+import dev.isxander.yacl3.api.controller.FloatSliderControllerBuilder;
 import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder;
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
-import me.onethecrazy.graphicqol.objects.config.EffectConfig;
-import me.onethecrazy.graphicqol.objects.config.FogConfig;
-import me.onethecrazy.graphicqol.objects.config.LightConfig;
-import me.onethecrazy.graphicqol.objects.config.ParticleConfig;
+import me.onethecrazy.graphicqol.objects.config.*;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
-
+import net.minecraft.client.gui.hud.InGameHud;
 public class ConfigScreen {
     public static Screen getNewConfigScreen(Screen parent) {
         return
@@ -166,6 +165,51 @@ public class ConfigScreen {
                                                                         .range(0, 100)
                                                                         .step(1)
                                                                         .formatValue(v -> Text.literal("×" + v ))
+                                                                )
+                                                                .build()
+                                                )
+                                                .build()
+                                )
+                                .group(
+                                        OptionGroup.createBuilder()
+                                                .name(Text.translatable("gui.graphical-qol.config.title.player_general"))
+                                                .option(
+                                                        Option.<Boolean>createBuilder()
+                                                                .name(Text.translatable("gui.graphical-qol.config.no_head_tilt"))
+                                                                .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.no_head_tilt")))
+                                                                .binding(
+                                                                        GeneralPlayerConfig.DEFAULT_HEAD_TILT,
+                                                                        () -> GraphicQoLClient.clientConfig.playerConfig.generalConfig.noHeadTilt, // getter
+                                                                        v  -> GraphicQoLClient.clientConfig.playerConfig.generalConfig.noHeadTilt = v // setter
+                                                                )
+                                                                .controller(TickBoxControllerBuilder::create)
+                                                                .build()
+                                                )
+                                                .option(
+                                                        Option.<Boolean>createBuilder()
+                                                                .name(Text.translatable("gui.graphical-qol.config.no_pumpkin_blur"))
+                                                                .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.no_pumpkin_blur")))
+                                                                .binding(
+                                                                        GeneralPlayerConfig.DEFAULT_PUMPKIN_BLUR,
+                                                                        () -> GraphicQoLClient.clientConfig.playerConfig.generalConfig.noPumpkinBlur, // getter
+                                                                        v  -> GraphicQoLClient.clientConfig.playerConfig.generalConfig.noPumpkinBlur = v // setter
+                                                                )
+                                                                .controller(TickBoxControllerBuilder::create)
+                                                                .build()
+                                                )
+                                                .option(
+                                                        Option.<Integer>createBuilder()
+                                                                .name(Text.translatable("gui.graphical-qol.config.low_fire_shift"))
+                                                                .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.low_fire_shift")))
+                                                                .binding(
+                                                                        GeneralPlayerConfig.DEFAULT_LOW_FIRE_SHIFT,
+                                                                        () -> GraphicQoLClient.clientConfig.playerConfig.generalConfig.lowFireShift, // getter
+                                                                        v  -> GraphicQoLClient.clientConfig.playerConfig.generalConfig.lowFireShift = v // setter
+                                                                )
+                                                                .controller(opt -> IntegerSliderControllerBuilder.create(opt)
+                                                                        .range(-10, 10)
+                                                                        .step(1)
+                                                                        .formatValue(v -> Text.of(String.format("%.1f", v / 10.0)))
                                                                 )
                                                                 .build()
                                                 )
