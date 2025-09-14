@@ -12,10 +12,19 @@ Various graphical Quality of Life settings for Minecraft Fabric
     - Disable Powder Snow Fog
   - Lighting
     - Gamma Correction (Fullbright)
+    - Global Color Tint
+  - Weather
+    - Weather Particle Opacity   
 - Player
   - Effects
     - Disable Blindess Darkening
     - Disable Darkness Darkening
+  - Particles
+    - Paarticle amount Multiplier
+  - General
+    - No Head Tilt on damage
+    - Disable Pumpkin Blur
+    - Low Fire
 
 ## Screenshots
 ![Menu 1](https://github.com/1TheCrazy/GraphicalQoL/blob/master/screenshots/settings_menu_1.png)
