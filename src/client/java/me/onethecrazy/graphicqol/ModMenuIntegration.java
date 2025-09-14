@@ -2,6 +2,7 @@ package me.onethecrazy.graphicqol;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
+import me.onethecrazy.graphicqol.objects.ConfigScreen;
 
 
 public class ModMenuIntegration implements ModMenuApi {

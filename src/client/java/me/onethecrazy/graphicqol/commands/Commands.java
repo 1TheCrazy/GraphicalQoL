@@ -1,8 +1,7 @@
 package me.onethecrazy.graphicqol.commands;
 
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
-import me.onethecrazy.graphicqol.ConfigScreen;
-import me.onethecrazy.graphicqol.ModMenuIntegration;
+import me.onethecrazy.graphicqol.objects.ConfigScreen;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
 import net.minecraft.client.MinecraftClient;

@@ -1,14 +1,18 @@
-package me.onethecrazy.graphicqol;
+package me.onethecrazy.graphicqol.objects;
 
 import dev.isxander.yacl3.api.*;
-import dev.isxander.yacl3.api.controller.DoubleSliderControllerBuilder;
-import dev.isxander.yacl3.api.controller.FloatSliderControllerBuilder;
+import dev.isxander.yacl3.api.controller.ColorControllerBuilder;
 import dev.isxander.yacl3.api.controller.IntegerSliderControllerBuilder;
 import dev.isxander.yacl3.api.controller.TickBoxControllerBuilder;
+import dev.isxander.yacl3.api.Option;
+import dev.isxander.yacl3.api.OptionDescription;
+import me.onethecrazy.graphicqol.GraphicQoLClient;
 import me.onethecrazy.graphicqol.objects.config.*;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
-import net.minecraft.client.gui.hud.InGameHud;
+
+import java.awt.*;
+
 public class ConfigScreen {
     public static Screen getNewConfigScreen(Screen parent) {
         return
@@ -110,6 +114,20 @@ public class ConfigScreen {
                                                                         .range(-750, 1500)
                                                                         .step(10)
                                                                         .formatValue(v -> Text.literal(String.valueOf(v) + "%"))
+                                                                )
+                                                                .build()
+                                                )
+                                                .option(
+                                                        Option.<Color>createBuilder()
+                                                                .name(Text.translatable("gui.graphical-qol.config.color_tint"))
+                                                                .description(OptionDescription.of(Text.translatable("gui.graphical-qol.config.description.color_tint")))
+                                                                .binding(
+                                                                        new Color(LightConfig.DEFAULT_COLOR_TINT, true),
+                                                                        () -> new Color(GraphicQoLClient.clientConfig.worldConfig.lightConfig.colorTint, true),
+                                                                        v  -> GraphicQoLClient.clientConfig.worldConfig.lightConfig.colorTint = v.getRGB()
+                                                                )
+                                                                .controller(opt -> ColorControllerBuilder.create(opt)
+                                                                        .allowAlpha(true)
                                                                 )
                                                                 .build()
                                                 )

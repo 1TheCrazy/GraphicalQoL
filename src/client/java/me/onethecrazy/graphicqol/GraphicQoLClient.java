@@ -1,10 +1,12 @@
 package me.onethecrazy.graphicqol;
 
 import me.onethecrazy.graphicqol.commands.Commands;
+import me.onethecrazy.graphicqol.objects.TintRenderer;
 import me.onethecrazy.graphicqol.objects.config.Config;
 import me.onethecrazy.graphicqol.util.FileUtil;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.fabricmc.fabric.api.client.rendering.v1.hud.HudElementRegistry;
 
 public class GraphicQoLClient implements ClientModInitializer {
 
@@ -20,6 +22,9 @@ public class GraphicQoLClient implements ClientModInitializer {
 
 		// Init command
 		registerCommand();
+
+		//Add color tint
+		addColorTint();
 	}
 
 	public static void registerCommand(){
@@ -32,5 +37,9 @@ public class GraphicQoLClient implements ClientModInitializer {
 
 	public static void saveConfig(){
 		FileUtil.writeConfig(clientConfig);
+	}
+
+	public static void addColorTint(){
+		TintRenderer.init();
 	}
 }

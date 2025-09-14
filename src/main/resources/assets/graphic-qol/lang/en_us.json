@@ -49,5 +49,8 @@
   "gui.graphical-qol.config.description.low_fire_shift" : "Shifts the Fire Overlay up/down when burning by the given amount",
 
   "gui.graphical-qol.config.weather_particle_opacity" : "Weather Particle Opacity",
-  "gui.graphical-qol.config.description.weather_particle_opacity" : "Adjust the opacity for Weather Particles like Snow and Rain"
+  "gui.graphical-qol.config.description.weather_particle_opacity" : "Adjust the opacity for Weather Particles like Snow and Rain",
+
+  "gui.graphical-qol.config.color_tint" : "Color Tint",
+  "gui.graphical-qol.config.description.color_tint" : "Adjust a global Color Tint of the game.\nThis can be used to e.g. make the colors less bright, or cooler/warmer"
 }

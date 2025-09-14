@@ -11,6 +11,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
+    // ---
+    // For Pumpkin Blur
+    // ---
     @Inject(method="renderOverlay", at=@At("HEAD"), cancellable = true)
     private void onRenderOverlay(DrawContext context, Identifier texture, float opacity, CallbackInfo ci){
         if(texture.getPath().endsWith("pumpkinblur.png") && GraphicQoLClient.clientConfig.playerConfig.generalConfig.noPumpkinBlur)

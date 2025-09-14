@@ -9,6 +9,9 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(InGameOverlayRenderer.class)
 public class InGameOverlayRendererMixin {
+    // ---
+    // For Low Fire
+    // ---
     @Redirect(method="renderFireOverlay",
             at= @At(
                     value = "INVOKE",
